@@ -12,7 +12,7 @@ body {
 }
 /* Custom scroll bar */
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 5px;
 	height: 8px;
 }
 ::-webkit-scrollbar-thumb {
