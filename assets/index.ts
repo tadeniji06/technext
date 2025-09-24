@@ -1,0 +1,10 @@
+import logo from "./logo.png";
+import hero from "./hero-blue.png";
+import facebook from "./facebook.png";
+import mac from "./mac.png";
+import slack from "./slack.png";
+import ene from "./ene.png";
+import work from "./work.png";
+import region from "./region.png";
+import smart from "./smart.png";
+export { logo, hero, facebook, mac, slack, ene, work, region, smart };
