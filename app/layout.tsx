@@ -6,6 +6,9 @@ import Footer from "@/layouts/Footer";
 export const metadata: Metadata = {
 	title: "Tech360 - Marketing Tech Solutions",
 	description: "Tech360 - Marketing Tech Solutions",
+	icons: {
+		icon: "/logo.png",
+	},
 };
 
 export default function RootLayout({

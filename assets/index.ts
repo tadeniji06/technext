@@ -15,9 +15,13 @@ import it from "./IT.png";
 import bizz from "./bizz.png";
 import about from "./AbouH.png";
 import vision from "./vision.png";
+import apart from "./apart.png";
+import contact from "./contact.png";
 export {
 	logo,
 	vision,
+	contact,
+	apart,
 	hero,
 	about,
 	facebook,
