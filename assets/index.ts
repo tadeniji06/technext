@@ -17,11 +17,13 @@ import about from "./AbouH.png";
 import vision from "./vision.png";
 import apart from "./apart.png";
 import contact from "./contact.png";
+import dm360 from './dm360.png';
 export {
 	logo,
 	vision,
 	contact,
 	apart,
+	dm360,
 	hero,
 	about,
 	facebook,
