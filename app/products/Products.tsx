@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { dm360 } from "@/assets";
+import Link from "next/link";
 
 const Products = () => {
 	const [ref, inView] = useInView({
@@ -107,8 +108,8 @@ const Products = () => {
 							DM360 is a comprehensive business automation platform
 							that brings together marketing, operations, and data
 							under one sleek, intuitive dashboard. Think less chaos,
-							more clarity — powered by automation that works *while
-							you sleep*.
+							more clarity — powered by automation that works while
+							you sleep.
 						</p>
 
 						<ul className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
@@ -132,7 +133,7 @@ const Products = () => {
 							whileTap={{ scale: 0.95 }}
 							className='mt-6 bg-primary-yellow text-bold-blue px-6 py-3 rounded-md font-semibold w-fit shadow-md hover:shadow-lg transition-all'
 						>
-							Join the Waitlist
+							<Link href={'/contact'}>Join the Waitlist</Link>
 						</motion.button>
 					</motion.div>
 				</motion.div>
