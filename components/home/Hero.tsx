@@ -2,11 +2,15 @@
 import { hero } from "@/assets";
 import { motion } from "framer-motion";
 import Image from "next/image";
+// import ProductBanner from "../ProductBanner";
 import Link from "next/link";
+import AnnouncementPopup from "../AnnouncementPopup";
 
 const Hero = () => {
 	return (
 		<div className='relative overflow-hidden w-full'>
+			{/* <ProductBanner /> */}
+			<AnnouncementPopup />
 			<Image
 				src={hero}
 				alt='Hero Images'
