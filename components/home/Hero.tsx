@@ -2,14 +2,12 @@
 import { hero } from "@/assets";
 import { motion } from "framer-motion";
 import Image from "next/image";
-// import ProductBanner from "../ProductBanner";
 import Link from "next/link";
 import AnnouncementPopup from "../AnnouncementPopup";
 
 const Hero = () => {
 	return (
 		<div className='relative overflow-hidden w-full'>
-			{/* <ProductBanner /> */}
 			<AnnouncementPopup />
 			<Image
 				src={hero}
@@ -22,7 +20,7 @@ const Hero = () => {
 				className='flex mx-auto p-8 flex-col gap-6 sm:gap-8 max-w-6xl w-full text-center mb-10'
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
+				transition={{ duration: 0.8 }}   
 			>
 				<motion.div
 					className='border mx-auto flex items-center justify-center border-white w-[300px] sm:w-[320px] h-[50px] rounded-2xl backdrop-blur-sm bg-white/10'
