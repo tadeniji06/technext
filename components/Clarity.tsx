@@ -2,7 +2,7 @@
 import Script from "next/script";
 
 const ClarityScript = () => {
-	const projectId = "sd5uecc7vv";
+	const projectId = "uwo2hplwey";
 	return (
 		<Script
 			id='clarity-script'
