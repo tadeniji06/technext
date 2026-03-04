@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import ClarityScript from "@/components/Clarity";
+import AnalyticsScript from "@/components/Analytics";
 
 export const metadata: Metadata = {
 	title: "Tech360 Solutions – Marketing Tech Solutions for Africa",
@@ -50,6 +51,7 @@ export default function RootLayout({
 				{children}
 				<Footer />
 				<ClarityScript />
+				<AnalyticsScript />
 			</body>
 		</html>
 	);
