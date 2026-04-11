@@ -10,7 +10,7 @@ const Testimonials = () => {
 			id: 1,
 			name: "Adebola M",
 			company: "Founder of NovaTech Supplies",
-			testimonial: `"Before B360, we juggled multiple tools just to stay on top of our operations. Now, everything from inventory tracking to sales analytics is centralized and automated. It feels like we gained a full operations team overnight. B360 has truly transformed how we run our business."`,
+			testimonial: `"Before BTech360, we juggled multiple tools just to stay on top of our operations. Now, everything from inventory tracking to sales analytics is centralized and automated. It feels like we gained a full operations team overnight. BTech360 has truly transformed how we run our business."`,
 		},
 		{
 			id: 2,
@@ -18,7 +18,7 @@ const Testimonials = () => {
 			position: "COO",
 			company: "BrightPath Innovations",
 			testimonial:
-				"B360 gave us the structure and clarity we were missing. As a fast-growing startup, we needed more than just spreadsheets—we needed smart automation. From task management to CRM, B360 scaled with us every step of the way.",
+				"BTech360 gave us the structure and clarity we were missing. As a fast-growing startup, we needed more than just spreadsheets—we needed smart automation. From task management to CRM, BTech360 scaled with us every step of the way.",
 		},
 		{
 			id: 3,
@@ -26,7 +26,7 @@ const Testimonials = () => {
 			position: "CTO",
 			company: "HexaTech Systems",
 			testimonial:
-				"The level of customer support from B360 is exceptional. Their team doesn't just provide a product—they partner with you to ensure your success. The platform's flexibility allowed us to customize workflows that perfectly match our unique business processes.",
+				"The level of customer support from BTech360 is exceptional. Their team doesn't just provide a product—they partner with you to ensure your success. The platform's flexibility allowed us to customize workflows that perfectly match our unique business processes.",
 		},
 		{
 			id: 4,
@@ -34,14 +34,14 @@ const Testimonials = () => {
 			position: "CEO",
 			company: "Kira Logistics",
 			testimonial:
-				"The level of customer support from B360 is exceptional. Their team doesn't just provide a product—they partner with you to ensure your success. The platform's flexibility allowed us to customize workflows that perfectly match our unique business processes.",
+				"The level of customer support from BTech360 is exceptional. Their team doesn't just provide a product—they partner with you to ensure your success. The platform's flexibility allowed us to customize workflows that perfectly match our unique business processes.",
 		},
 		{
 			id: 5,
 			name: "Tobi F.E",
 			position: "CTO",
 			company: "DDA Corp",
-			testimonial: `B360 helped us break down silos across departments. Before, our teams worked in isolated systems, and it slowed everything down—from project execution to reporting. Now, marketing, sales, and operations are fully connected on one intuitive platform. Communication has improved, tasks are clearly tracked, and decision-making is faster. It's been a total game changer for team collaboration and productivity`,
+			testimonial: `BTech360 helped us break down silos across departments. Before, our teams worked in isolated systems, and it slowed everything down—from project execution to reporting. Now, marketing, sales, and operations are fully connected on one intuitive platform. Communication has improved, tasks are clearly tracked, and decision-making is faster. It's been a total game changer for team collaboration and productivity`,
 		},
 	];
 
@@ -86,7 +86,7 @@ const Testimonials = () => {
 						className='text-3xl font-bold text-gray-900 mb-4'
 						variants={itemVariants}
 					>
-						Join Other Companies who trust in B360
+						Join Other Companies who trust in BTech360
 					</motion.h2>
 					<motion.p
 						className='text-lg text-gray-600 max-w-3xl mx-auto'

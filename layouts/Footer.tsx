@@ -13,9 +13,9 @@ const Footer = () => {
 			<div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8'>
 				{/* About Section */}
 				<div className='md:col-span-1'>
-					<h2 className='text-2xl font-bold mb-4'>Tech360</h2>
+					<h2 className='text-2xl font-bold mb-4'>BTech360</h2>
 					<p className='text-blue-100 mb-6'>
-						Tech360 (T360) is a software solutions corporation focused
+						BTech360 (B360) is a software solutions corporation focused
 						on developing modular, industry-specific enterprise
 						resource management (ERM) systems.
 					</p>

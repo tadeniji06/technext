@@ -104,7 +104,7 @@ const AboutHero = () => {
 							}
 							transition={{ duration: 0.5, delay: 0.7 }}
 						>
-							About Tech360
+							About BTech360
 						</motion.h2>
 						<motion.p
 							className='text-sm sm:text-base leading-relaxed'
@@ -112,7 +112,7 @@ const AboutHero = () => {
 							animate={imageInView ? { opacity: 1 } : { opacity: 0 }}
 							transition={{ duration: 0.5, delay: 0.9 }}
 						>
-							Tech360 (T360) is a leading provider of innovative,
+							BTech360 (B360) is a leading provider of innovative,
 							scalable, and localized enterprise solutions designed to
 							empower African SMEs. We deliver intelligent software
 							that simplifies operations, boosts productivity, and

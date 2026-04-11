@@ -47,9 +47,9 @@ const AnnouncementPopup = () => {
 					<p className='text-sm sm:text-base text-white/90 leading-relaxed'>
 						Introducing{" "}
 						<span className='text-primary-yellow font-medium'>
-							DM360
+							Marketing360
 						</span>{" "}
-						— automate your marketing, SEO, and analytics from one
+						— automate your marketing, and analytics from one
 						dashboard.
 					</p>
 

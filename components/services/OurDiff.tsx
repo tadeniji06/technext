@@ -109,11 +109,11 @@ const OurDiff = () => {
 					<div className='w-full lg:w-1/2'>
 						<motion.div className='mb-10' variants={itemVariants}>
 							<h2 className='text-3xl font-bold text-gray-900 mb-3'>
-								What Sets Us Apart: The B360 Difference
+								What Sets Us Apart: The BTech360 Difference
 							</h2>
 							<p className='text-lg text-gray-600'>
 								Smart, adaptable, and built for your business, here's
-								how B360 delivers real value where it matters most.
+								how BTech360 delivers real value where it matters most.
 							</p>
 						</motion.div>
 

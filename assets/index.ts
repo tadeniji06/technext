@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "./bt.png";
 import hero from "./hero-blue.png";
 import facebook from "./facebook.png";
 import mac from "./mac.png";
@@ -17,7 +17,7 @@ import about from "./AbouH.png";
 import vision from "./vision.png";
 import apart from "./apart.png";
 import contact from "./contact.png";
-import dm360 from './dm360.png';
+import dm360 from './mm360.png';
 export {
 	logo,
 	vision,

@@ -46,7 +46,7 @@ const Hero = () => {
 						Businesses with Smart, Scalable{" "}
 						<br className='hidden md:block' />
 						Solutions. The Future of ERM starts with{" "}
-						<span className='text-primary-yellow'>Tech360</span>
+						<span className='text-primary-yellow'>BTech360</span>
 					</h1>
 				</motion.div>
 

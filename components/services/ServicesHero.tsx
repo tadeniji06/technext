@@ -43,7 +43,7 @@ const ServicesHero = () => {
 					animate={heroInView ? { opacity: 1, x: 0 } : {}}
 					transition={{ duration: 0.6, delay: 0.4 }}
 				>
-					At B360, our service philosophy is rooted in simplicity,
+					At BTech360, our service philosophy is rooted in simplicity,
 					adaptability, and value.
 				</motion.h2>
 
