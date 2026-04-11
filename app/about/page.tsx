@@ -6,21 +6,21 @@ import Testimonials from "@/components/home/Testimonials";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "About Us | Tech360 Solutions",
+	title: "About Us | BTech360 Solutions",
 	description:
-		"Discover Tech360 Solutions – our mission, vision, and values. Learn how our team is driving digital transformation through innovative marketing technology solutions.",
+		"Discover BTech360 Solutions – our mission, vision, and values. Learn how our team is driving digital transformation through innovative marketing technology solutions.",
 	keywords: [
-		"About Tech360",
-		"Tech360 Solutions team",
-		"Tech360 mission",
-		"Tech360 vision",
+		"About BTech360",
+		"BTech360 Solutions team",
+		"BTech360 mission",
+		"BTech360 vision",
 		"digital marketing solutions",
 		"marketing technology company",
 		"business growth Nigeria",
 		"tech company Lagos",
 	],
 	openGraph: {
-		title: "About Us | Tech360 Solutions",
+		title: "About Us | BTech360 Solutions",
 		description:
 			"Discover Tech360 Solutions – our mission, vision, and values.",
 		url: "https://www.tech360online.com/about",
