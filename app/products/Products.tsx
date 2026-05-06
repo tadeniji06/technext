@@ -5,7 +5,45 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import { dm360, hrm } from "@/assets";
+import { dm360, hrm, bprime } from "@/assets";
+
+const industries = [
+	{
+		id: "financial",
+		label: "Financial Services",
+		icon: "mdi:bank-outline",
+		description: "Core banking, insurance, lending platforms, and investment management tailored for regulated financial environments.",
+		highlights: ["Compliance & Audit Trails", "Multi-Currency Ledger", "Risk Management", "Loan Origination"],
+	},
+	{
+		id: "retail",
+		label: "Retail",
+		icon: "mdi:store-outline",
+		description: "End-to-end retail management from POS and inventory to supplier relationships and omnichannel customer experience.",
+		highlights: ["POS & Inventory Sync", "Omnichannel Commerce", "Supplier Management", "Customer Loyalty Engine"],
+	},
+	{
+		id: "manufacturing",
+		label: "Manufacturing",
+		icon: "mdi:factory",
+		description: "Production planning, bill of materials, quality control, and plant floor operations for discrete and process manufacturers.",
+		highlights: ["Production Planning (MRP)", "Bill of Materials", "Quality Control", "Plant Floor Operations"],
+	},
+	{
+		id: "services",
+		label: "Services",
+		icon: "mdi:briefcase-outline",
+		description: "Project-based billing, resource planning, and client delivery management for professional and managed service firms.",
+		highlights: ["Project & Resource Planning", "Time & Billing", "Client Portal", "SLA Management"],
+	},
+	{
+		id: "transport",
+		label: "Transport & Logistics",
+		icon: "mdi:truck-outline",
+		description: "Fleet management, route optimization, freight tracking, and warehouse operations for logistics-intensive businesses.",
+		highlights: ["Fleet & Route Management", "Freight Tracking", "Warehouse Ops (WMS)", "Driver & Compliance"],
+	},
+];
 
 const productsData = [
 	{
@@ -51,7 +89,7 @@ const productsData = [
 		description:
 			"Build and nurture lasting customer relationships. Our CRM is being built to provide deep visibility into your sales pipeline, lead scoring, and customer lifecycle management.",
 		url: "#",
-		color: "#daeefe", // light-blue
+		color: "#daeefe",
 		icon: "mdi:handshake",
 		features: [
 			"Sales Pipeline Management",
@@ -61,14 +99,33 @@ const productsData = [
 		],
 		status: "in-progress",
 	},
+	{
+		id: "biz360prime",
+		name: "Biz360Prime",
+		tagline: "Vertical ERP for Every Industry",
+		description:
+			"Purpose-built ERP solutions tailored to the unique workflows and compliance needs of your industry. Biz360Prime delivers deep vertical functionality — not just generic modules — so your operations run smarter from day one.",
+		url: "https://biz360prime.com",
+		color: "#000647",
+		icon: "mdi:layers-triple-outline",
+		image: bprime,
+		features: [
+			"Industry-Specific Modules",
+			"End-to-End Workflow Automation",
+			"Regulatory Compliance Built-In",
+			"Unified Reporting Dashboard",
+		],
+		status: "in-progress",
+		hasIndustries: true,
+	},
 ];
 
 const Products = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState(productsData[0]);
+	const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 
-	// Close dropdown when clicking outside
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -78,6 +135,17 @@ const Products = () => {
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
+
+	// Reset industry selection when switching away from Biz360Prime
+	const handleProductSelect = (product: typeof productsData[0]) => {
+		setSelectedProduct(product);
+		setIsOpen(false);
+		if (product.id === "biz360prime") {
+			setSelectedIndustry(industries[0]);
+		}
+	};
+
+	const isBiz360Prime = selectedProduct.id === "biz360prime";
 
 	return (
 		<section className='relative min-h-screen bg-white py-24 overflow-hidden'>
@@ -137,13 +205,10 @@ const Products = () => {
 										{productsData.map((product) => (
 											<button
 												key={product.id}
-												onClick={() => {
-													setSelectedProduct(product);
-													setIsOpen(false);
-												}}
+												onClick={() => handleProductSelect(product)}
 												className={`w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-200 ${
-													selectedProduct.id === product.id 
-													? 'bg-bold-blue text-white' 
+													selectedProduct.id === product.id
+													? 'bg-bold-blue text-white'
 													: 'hover:bg-gray-50 text-bold-blue'
 												}`}
 											>
@@ -199,16 +264,68 @@ const Products = () => {
 									{selectedProduct.description}
 								</p>
 
-								<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-									{selectedProduct.features.map((feature, idx) => (
-										<div key={idx} className='flex items-center gap-3'>
-											<div className='w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0'>
-												<Icon icon="mdi:check" className='text-primary-yellow' width={14} />
-											</div>
-											<span className='text-gray-700 font-medium'>{feature}</span>
+								{/* Industry Picker — only for Biz360Prime */}
+								{isBiz360Prime && (
+									<div className='space-y-3'>
+										<p className='text-xs font-bold text-gray-400 uppercase tracking-widest'>Choose Your Industry</p>
+										<div className='flex flex-wrap gap-2'>
+											{industries.map((industry) => (
+												<button
+													key={industry.id}
+													onClick={() => setSelectedIndustry(industry)}
+													className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all duration-200 ${
+														selectedIndustry.id === industry.id
+															? 'bg-bold-blue text-white border-bold-blue'
+															: 'bg-white text-bold-blue border-bold-blue/10 hover:border-primary-yellow'
+													}`}
+												>
+													<Icon icon={industry.icon} width={16} />
+													{industry.label}
+												</button>
+											))}
 										</div>
-									))}
-								</div>
+									</div>
+								)}
+
+								{/* Features — switches to industry highlights when Biz360Prime */}
+								<AnimatePresence mode="wait">
+									<motion.div
+										key={isBiz360Prime ? selectedIndustry.id : selectedProduct.id}
+										initial={{ opacity: 0, y: 8 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: -8 }}
+										transition={{ duration: 0.3 }}
+										className='grid grid-cols-1 sm:grid-cols-2 gap-4'
+									>
+										{(isBiz360Prime
+											? selectedIndustry.highlights
+											: selectedProduct.features
+										).map((feature, idx) => (
+											<div key={idx} className='flex items-center gap-3'>
+												<div className='w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0'>
+													<Icon icon="mdi:check" className='text-primary-yellow' width={14} />
+												</div>
+												<span className='text-gray-700 font-medium'>{feature}</span>
+											</div>
+										))}
+									</motion.div>
+								</AnimatePresence>
+
+								{/* Industry description blurb */}
+								{isBiz360Prime && (
+									<AnimatePresence mode="wait">
+										<motion.p
+											key={selectedIndustry.id}
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											transition={{ duration: 0.3 }}
+											className='text-gray-500 text-sm leading-relaxed border-l-4 border-primary-yellow pl-4'
+										>
+											{selectedIndustry.description}
+										</motion.p>
+									</AnimatePresence>
+								)}
 
 								<div className='pt-8'>
 									{selectedProduct.status === 'in-progress' ? (
@@ -218,13 +335,13 @@ const Products = () => {
 												whileTap={{ scale: 0.95 }}
 												className='bg-white text-bold-blue border-2 border-bold-blue/10 px-10 py-5 rounded-2xl font-bold text-lg flex items-center gap-3 shadow-lg hover:shadow-xl transition-all'
 											>
-												Join the Waitlist
+												{isBiz360Prime ? `Get Early Access for ${selectedIndustry.label}` : 'Join the Waitlist'}
 												<Icon icon="mdi:clock-outline" width={24} className="text-primary-yellow" />
 											</motion.button>
 										</Link>
 									) : (
-										<Link 
-											href={selectedProduct.url} 
+										<Link
+											href={selectedProduct.url}
 											target="_blank"
 											className='inline-flex'
 										>
@@ -249,7 +366,7 @@ const Products = () => {
 									transition={{ duration: 0.8 }}
 									className='relative z-10'
 								>
-									<div className='bg-white p-4 rounded-[32px] shadow-2xl border border-gray-100 min-h-[300px] flex items-center justify-center overflow-hidden relative'>
+									<div className={`p-4 rounded-[32px] shadow-2xl border min-h-[300px] flex items-center justify-center overflow-hidden relative transition-colors duration-500 ${isBiz360Prime ? 'bg-bold-blue border-bold-blue' : 'bg-white border-gray-100'}`}>
 										{selectedProduct.image ? (
 											<Image
 												src={selectedProduct.image}
@@ -258,24 +375,48 @@ const Products = () => {
 											/>
 										) : (
 											<div className="text-center py-12 px-8">
-												<motion.div
-													initial={{ opacity: 0, scale: 0.8 }}
-													animate={{ opacity: 1, scale: 1 }}
-													className="w-32 h-32 bg-bold-blue/5 rounded-full flex items-center justify-center mx-auto mb-8"
-												>
-													<Icon icon={selectedProduct.icon} width={80} className="text-bold-blue/10" />
-												</motion.div>
-												<h4 className="text-3xl font-black text-bold-blue/20 uppercase tracking-tighter mb-2">
-													{selectedProduct.name}
-												</h4>
-												<div className="inline-block px-4 py-1 bg-primary-yellow/10 text-primary-yellow text-xs font-bold rounded-full uppercase tracking-widest">
-													Design in Progress
-												</div>
+												{isBiz360Prime ? (
+													<motion.div
+														key={selectedIndustry.id}
+														initial={{ opacity: 0, scale: 0.85 }}
+														animate={{ opacity: 1, scale: 1 }}
+														transition={{ duration: 0.4 }}
+														className="flex flex-col items-center"
+													>
+														<div className="w-32 h-32 bg-bold-blue/5 rounded-full flex items-center justify-center mx-auto mb-6">
+															<Icon icon={selectedIndustry.icon} width={64} className="text-bold-blue/30" />
+														</div>
+														<h4 className="text-2xl font-black text-bold-blue/30 uppercase tracking-tighter mb-2">
+															{selectedIndustry.label}
+														</h4>
+														<div className="inline-block px-4 py-1 bg-primary-yellow/10 text-primary-yellow text-xs font-bold rounded-full uppercase tracking-widest">
+															ERP Module Coming Soon
+														</div>
+													</motion.div>
+												) : (
+													<motion.div
+														initial={{ opacity: 0, scale: 0.8 }}
+														animate={{ opacity: 1, scale: 1 }}
+														className="w-32 h-32 bg-bold-blue/5 rounded-full flex items-center justify-center mx-auto mb-8"
+													>
+														<Icon icon={selectedProduct.icon} width={80} className="text-bold-blue/10" />
+													</motion.div>
+												)}
+												{!isBiz360Prime && (
+													<>
+														<h4 className="text-3xl font-black text-bold-blue/20 uppercase tracking-tighter mb-2">
+															{selectedProduct.name}
+														</h4>
+														<div className="inline-block px-4 py-1 bg-primary-yellow/10 text-primary-yellow text-xs font-bold rounded-full uppercase tracking-widest">
+															Design in Progress
+														</div>
+													</>
+												)}
 											</div>
 										)}
 									</div>
-									
-									{/* Floating Stats or Badges */}
+
+									{/* Floating Stats Badge */}
 									<motion.div
 										animate={{ y: [0, -10, 0] }}
 										transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -289,6 +430,23 @@ const Products = () => {
 											<p className='text-sm font-black text-bold-blue'>+40% Increase</p>
 										</div>
 									</motion.div>
+
+									{/* Additional floating badge for Biz360Prime */}
+									{isBiz360Prime && (
+										<motion.div
+											animate={{ y: [0, 8, 0] }}
+											transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+											className='absolute -bottom-4 -left-6 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-2'
+										>
+											<div className='w-8 h-8 rounded-full bg-primary-yellow/10 flex items-center justify-center'>
+												<Icon icon="mdi:layers-triple-outline" className='text-bold-blue' width={18} />
+											</div>
+											<div>
+												<p className='text-xs text-gray-400 font-bold'>Industries</p>
+												<p className='text-sm font-black text-bold-blue'>5 Verticals</p>
+											</div>
+										</motion.div>
+									)}
 								</motion.div>
 							</div>
 						</motion.div>
