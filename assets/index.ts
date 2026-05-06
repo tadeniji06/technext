@@ -18,8 +18,10 @@ import vision from "./vision.png";
 import apart from "./apart.png";
 import contact from "./contact.png";
 import dm360 from './mm360.png';
+import hrm from './hrm.png';
 export {
 	logo,
+	hrm,
 	vision,
 	contact,
 	apart,
