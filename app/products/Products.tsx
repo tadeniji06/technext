@@ -97,7 +97,7 @@ const productsData = [
 			"Customer Support Suite",
 			"Lifecycle Marketing",
 		],
-		status: "in-progress",
+		status: "active",
 	},
 	{
 		id: "biz360prime",
@@ -115,7 +115,7 @@ const productsData = [
 			"Regulatory Compliance Built-In",
 			"Unified Reporting Dashboard",
 		],
-		status: "in-progress",
+		status: "active",
 		hasIndustries: true,
 	},
 ];
