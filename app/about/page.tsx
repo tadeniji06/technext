@@ -3,6 +3,8 @@ import Cause from "@/components/about/Cause";
 import OurStand from "@/components/about/OurStand";
 import Vision from "@/components/about/Vision";
 import Testimonials from "@/components/home/Testimonials";
+import { JsonLd } from "@/components/json_ld";
+import { aboutBreadcrumbSchema, localBusinessSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,27 +24,26 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us | BTech360 Solutions",
     description:
-      "Discover Tech360 Solutions – our mission, vision, and values.",
-    url: "https://www.tech360online.com/about",
-    siteName: "Tech360 Solutions",
+      "Discover BTech360 Solutions – our mission, vision, and values.",
+    url: "https://www.btech360online.com/about",
+    siteName: "BTech360 Solutions",
     images: ["/logo.png"],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Tech360 Solutions",
+    title: "About Us | BTech360 Solutions",
     description:
-      "Discover Tech360 Solutions – our mission, vision, and values.",
+      "Discover BTech360 Solutions – our mission, vision, and values.",
     images: ["/logo.png"],
   },
 };
 
-console.log("please work");
-
 const page = () => {
   return (
     <div>
+      <JsonLd data={[aboutBreadcrumbSchema, localBusinessSchema]} />
       <AboutHero />
       <Cause />
       <Vision />
@@ -51,4 +52,5 @@ const page = () => {
     </div>
   );
 };
+
 export default page;
