@@ -6,47 +6,49 @@ import Testimonials from "@/components/home/Testimonials";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "About Us | BTech360 Solutions",
-	description:
-		"Discover BTech360 Solutions – our mission, vision, and values. Learn how our team is driving digital transformation through innovative marketing technology solutions.",
-	keywords: [
-		"About BTech360",
-		"BTech360 Solutions team",
-		"BTech360 mission",
-		"BTech360 vision",
-		"digital marketing solutions",
-		"marketing technology company",
-		"business growth Nigeria",
-		"tech company Lagos",
-	],
-	openGraph: {
-		title: "About Us | BTech360 Solutions",
-		description:
-			"Discover Tech360 Solutions – our mission, vision, and values.",
-		url: "https://www.tech360online.com/about",
-		siteName: "Tech360 Solutions",
-		images: ["/logo.png"],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "About Us | Tech360 Solutions",
-		description:
-			"Discover Tech360 Solutions – our mission, vision, and values.",
-		images: ["/logo.png"],
-	},
+  title: "About Us | BTech360 Solutions",
+  description:
+    "Discover BTech360 Solutions – our mission, vision, and values. Learn how our team is driving digital transformation through innovative marketing technology solutions.",
+  keywords: [
+    "About BTech360",
+    "BTech360 Solutions team",
+    "BTech360 mission",
+    "BTech360 vision",
+    "digital marketing solutions",
+    "marketing technology company",
+    "business growth Nigeria",
+    "tech company Lagos",
+  ],
+  openGraph: {
+    title: "About Us | BTech360 Solutions",
+    description:
+      "Discover Tech360 Solutions – our mission, vision, and values.",
+    url: "https://www.tech360online.com/about",
+    siteName: "Tech360 Solutions",
+    images: ["/logo.png"],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Tech360 Solutions",
+    description:
+      "Discover Tech360 Solutions – our mission, vision, and values.",
+    images: ["/logo.png"],
+  },
 };
 
+console.log("please work");
+
 const page = () => {
-	return (
-		<div>
-			<AboutHero />
-			<Cause />
-			<Vision />
-			<OurStand />
-			<Testimonials />
-		</div>
-	);
+  return (
+    <div>
+      <AboutHero />
+      <Cause />
+      <Vision />
+      <OurStand />
+      <Testimonials />
+    </div>
+  );
 };
 export default page;
