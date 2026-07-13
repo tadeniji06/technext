@@ -4,17 +4,27 @@ import Core from "@/components/home/Core";
 import Hero from "@/components/home/Hero";
 import Testimonials from "@/components/home/Testimonials";
 import WhyUs from "@/components/home/WhyUs";
+import { JsonLd } from "@/components/json_ld";
+import {
+  homepageSchema,
+  softwareApplicationSchema,
+  reviewSchema,
+} from "@/lib/schema";
 
 const page = () => {
-	return (
-		<div>
-			<Hero />
-			<Building />
-			<WhyUs />
-			<Brands />
-			<Core />
-			<Testimonials />
-		</div>
-	);
+  return (
+    <div>
+      <JsonLd
+        data={[homepageSchema, softwareApplicationSchema, reviewSchema]}
+      />
+      <Hero />
+      <Building />
+      <WhyUs />
+      <Brands />
+      <Core />
+      <Testimonials />
+    </div>
+  );
 };
+
 export default page;
