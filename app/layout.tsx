@@ -52,8 +52,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <head>
         <JsonLd data={[organizationSchema, websiteSchema]} />
+      </head>
+      <body className="antialiased">
         <Header />
         {children}
         <Footer />
