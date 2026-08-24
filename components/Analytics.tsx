@@ -14,7 +14,7 @@ const AnalyticsScript = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-GCPHV0EFS4');
+          gtag('config', 'G-MR2JK2KDFP');
         `}
       </Script>
     </>
