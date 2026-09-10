@@ -5,6 +5,7 @@ import Footer from "@/layouts/Footer";
 import ClarityScript from "@/components/Clarity";
 import AnalyticsScript from "@/components/Analytics";
 import { JsonLd } from "@/components/json_ld";
+import Script from "next/script";
 import {
   organizationSchema,
   websiteSchema,
@@ -61,6 +62,13 @@ export default function RootLayout({
         <Footer />
         <ClarityScript />
         <AnalyticsScript />
+        <Script
+          src="https://app.crm360online.com/capture.js"
+          data-endpoint="https://crm-vertical-saas.onrender.com/api/v1/public/leads/inbound"
+          data-key="pk_live_68f43a6b0560a7cbf69b4c03a216914448be5ee9cae119ad"
+          data-selector="#contact-form"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
