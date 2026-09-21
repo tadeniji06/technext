@@ -16,6 +16,10 @@ const DEFAULT_BANNER_IMAGES = [
   "/banners/email.png",
   "/banners/digital.png",
   "/banners/performance.png",
+  "/banners/crm.png",
+  "/banners/hrm.png",
+  "/banners/lead.png",
+  "/banners/seo.png"
 ];
 
 export default function ProductServiceBanner({
